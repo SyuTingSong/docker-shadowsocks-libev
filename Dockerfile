@@ -1,9 +1,7 @@
 FROM alpine:3.6
 
 ENV SERVER_ADDR=0.0.0.0 SERVER_PORT=8388 PASSWORD=foobar METHOD=aes-256-gcm\
-    TIMEOUT=300 DNS_ADDR=8.8.8.8 DNS_ADDR_2=8.8.4.4
-ENV ARGS=--fastopen
-
+    TIMEOUT=300 DNS_ADDR=8.8.8.8 DNS_ADDR_2=8.8.4.4 ARGS=--fast-open
 
 RUN apk add --no-cache --virtual .build-deps gcc autoconf\
     libtool automake make zlib-dev openssl-dev asciidoc xmlto\
